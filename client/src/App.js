@@ -1,13 +1,27 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { PhonesList } from './components';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchPhones } from './redux/action';
 
 function App() {
+  const phones = useSelector((state) => state.phones);
+  const error = useSelector((state) => state.error);
+  const pending = useSelector((state) => state.pending);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPhones());
+  }, []);
+
   return (
     <div>
-      <Switch>
-        <Route exact path='/phones' component={PhonesList} />
-      </Switch>
+      {console.log(phones, error, pending)}
+      <h2>PHONES LIST</h2>
+      <ul>
+        {phones.map((phone) => (
+          <li key={phone.id}>{phone.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

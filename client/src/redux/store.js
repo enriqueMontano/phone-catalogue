@@ -23,7 +23,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const middleware = applyMiddleware(thunk);
-const store = createStore(reducer, middleware);
-
-export { store };
+export const store = createStore(reducer, applyMiddleware(thunk));
