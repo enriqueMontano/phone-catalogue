@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 5000;
 const data = require('./data/phones.json');
+const cors = require('cors');
 
-app.get('/phones', (req, res) => res.json(data));
+app.use(cors({ origin: 'http://localhost:3000' }));
 
-app.listen(port, () => console.log(`Server listen on port ${port}`));
+app.get('/phones', (req, res) => res.send(data));
+
+app.listen(5000, () => console.log(`Server listen on port 5000`));
