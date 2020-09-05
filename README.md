@@ -35,12 +35,12 @@ $ npm start
 
 Project is created with:
 
-# REST API
+### REST API
 
 - Node.js: v12.14.1
 - Express.js: v4.17.1
 
-# CLIENT
+### CLIENT
 
 - React: v16.13.1
 - Redux: v4.0.5
