@@ -13,7 +13,8 @@ export const TagWrapper = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 0.6;
-  color: #ffffff;
+  color: ${({ theme }) => theme.primary.white};
+  background-color: ${({ color }) => color};
   margin: 3px 0 0 3px;
 
   span {

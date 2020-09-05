@@ -1,11 +1,10 @@
 import React from 'react';
 import { PriceWrapper } from './Price.styled';
+import { theme } from '../../resources/theme';
 
-export const Price = ({ price }) => {
-  return (
-    <PriceWrapper>
-      {price}
-      <span>€</span>
-    </PriceWrapper>
-  );
-};
+export const Price = ({ price }) => (
+  <PriceWrapper theme={theme}>
+    {price}
+    <span>€</span>
+  </PriceWrapper>
+);

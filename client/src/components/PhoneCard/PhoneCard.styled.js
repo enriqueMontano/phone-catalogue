@@ -28,6 +28,6 @@ export const PhoneCardWrapper = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #0f1c51;
+    color: ${({ theme }) => theme.primary.blue};
   }
 `;

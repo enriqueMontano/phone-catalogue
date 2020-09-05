@@ -13,8 +13,8 @@ export const CustomLink = styled(Link)`
   text-align: center;
   align-items: center;
   font-family: 'Helvetica';
-  background-color: #246cf0;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.primary.lightBlue};
+  color: ${({ theme }) => theme.primary.white};
   font-size: 15px;
 
   &:hover {
@@ -22,10 +22,10 @@ export const CustomLink = styled(Link)`
   }
 
   &:active {
-    background: #f0f3f9;
+    background: ${({ theme }) => theme.primary.ultraLightBlue};
     border: 1px solid #246cf0;
     box-sizing: border-box;
     border-radius: 2px;
-    color: #246cf0;
+    color: ${({ theme }) => theme.primary.lightBlue};
   }
 `;

@@ -12,7 +12,7 @@ export const PriceWrapper = styled.div`
   height: 40px;
 
   border-radius: 50%;
-  background: #fdca64;
+  background: ${({ theme }) => theme.secondary.yellow};
   background-size: contain;
   background-position: center;
   font-family: Helvetica;
@@ -21,7 +21,7 @@ export const PriceWrapper = styled.div`
   font-size: 18px;
   line-height: 20px;
   text-transform: uppercase;
-  color: #0f1c51;
+  color: ${({ theme }) => theme.primary.blue};
   padding: 10px;
 
   box-shadow: 0px 0px 45px rgba(10, 16, 75, 0.1);

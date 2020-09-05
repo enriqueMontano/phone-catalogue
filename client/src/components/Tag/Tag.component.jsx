@@ -1,26 +1,15 @@
 import React from 'react';
 import { TagWrapper } from './Tag.styled';
+import { theme } from '../../resources/theme';
 
-export const Tag = ({ feature, color }) => {
-  console.log(feature);
-  return typeof feature !== 'number' ? (
-    <TagWrapper
-      style={{
-        backgroundColor: color,
-      }}
-      className='tag-wrapper'
-    >
+export const Tag = ({ feature, color }) =>
+  typeof feature !== 'number' ? (
+    <TagWrapper theme={theme} color={color}>
       {feature}
     </TagWrapper>
   ) : (
-    <TagWrapper
-      style={{
-        backgroundColor: color,
-      }}
-      className='tag-wrapper'
-    >
+    <TagWrapper theme={theme} color={color}>
       {feature}
       <span>GB</span>
     </TagWrapper>
   );
-};
