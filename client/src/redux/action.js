@@ -28,10 +28,9 @@ export const fetchPhones = () => async (dispatch) => {
   const phones = await fetch('http://localhost:5000/phones')
     .then((res) => res.json())
     .catch((error) => {
+      console.log(error);
       dispatch(fetchPhonesError(error));
     });
 
-  // dispatch(fetchPhonesSuccess(phones));
-
-  setTimeout(() => dispatch(fetchPhonesSuccess(phones)), 2000);
+  dispatch(fetchPhonesSuccess(phones));
 };

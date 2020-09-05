@@ -23,7 +23,9 @@ function App() {
         <Route
           exact
           path='/'
-          component={() => <PhonesList phonesList={phones} pending={pending} />}
+          component={() => (
+            <PhonesList phonesList={phones} pending={pending} error={error} />
+          )}
         />
         <Route exact path='/:name/detail' component={PhoneDetails} />
       </Switch>
