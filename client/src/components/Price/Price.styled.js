@@ -8,8 +8,8 @@ export const PriceWrapper = styled.div`
   top: -10px;
   left: -10px;
 
-  width: 40px;
-  height: 40px;
+  width: ${({ width }) => (width ? width : `${40}px`)};
+  height: ${({ height }) => (height ? height : `${20}px`)};
 
   border-radius: 50%;
   background: ${({ theme }) => theme.secondary.yellow};

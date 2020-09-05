@@ -9,8 +9,4 @@ export const PhonesListWrapper = styled.section`
   column-gap: 10px;
   row-gap: 15px;
   justify-items: center;
-
-  @media (max-width: 1669px) {
-    margin-top: 40px;
-  }
 `;

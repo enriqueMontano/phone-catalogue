@@ -10,4 +10,7 @@ export const Panel = styled.div`
   display: grid;
   position: relative;
   align-self: center;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 `;

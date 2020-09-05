@@ -7,12 +7,14 @@ import { PhoneCardWrapper } from './PhoneCard.styled';
 import { theme } from '../../resources/theme';
 
 export const PhoneCard = ({
+  id,
   name,
   manufacturer,
   processor,
   ram,
   price,
   imageFileName,
+  action,
 }) => (
   <Panel width={`${175}px`} height={`${350}px`}>
     <PhoneCardWrapper theme={theme}>
@@ -29,7 +31,11 @@ export const PhoneCard = ({
           <Tag feature={ram} color={theme.primary.blue} />
         </div>
       </div>
-      <CustomLink theme={theme} to={`${name}/detail/`}>
+      <CustomLink
+        theme={theme}
+        to={`${name}/detail/`}
+        onClick={() => action(id)}
+      >
         View More
       </CustomLink>
     </PhoneCardWrapper>

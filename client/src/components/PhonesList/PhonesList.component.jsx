@@ -5,7 +5,7 @@ import { Spinner } from '../Spinner/Spinner.component';
 import { Error } from '../Error/Error.component';
 import { ReactComponent as ErrorIcon } from '../../resources/svg/error.svg';
 
-export const PhonesList = ({ error, pending, phonesList = [] }) => {
+export const PhonesList = ({ error, pending, phonesList = [], action }) => {
   return (
     <PhonesListWrapper>
       {error === undefined ? (
@@ -13,7 +13,9 @@ export const PhonesList = ({ error, pending, phonesList = [] }) => {
       ) : pending ? (
         <Spinner />
       ) : (
-        phonesList.map((phone) => <PhoneCard key={phone.id} {...phone} />)
+        phonesList.map((phone) => (
+          <PhoneCard key={phone.id} {...phone} action={action} />
+        ))
       )}
     </PhonesListWrapper>
   );
