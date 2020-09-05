@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPhones } from './redux/action';
+import { PhonesList } from './components/PhonesList/PhonesList.component';
+import { PhoneDetails } from './components/PhoneDetails/PhoneDetails.component';
+import './App.css';
 
 function App() {
   const phones = useSelector((state) => state.phones);
@@ -11,17 +15,18 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPhones());
-  }, []);
+  }, [dispatch]);
 
   return (
-    <div>
-      {console.log(phones, error, pending)}
-      <h2>PHONES LIST</h2>
-      <ul>
-        {phones.map((phone) => (
-          <li key={phone.id}>{phone.name}</li>
-        ))}
-      </ul>
+    <div className='App'>
+      <Switch>
+        <Route
+          exact
+          path='/'
+          component={() => <PhonesList phonesList={phones} />}
+        />
+        <Route exact path='/:name/detail' component={PhoneDetails} />
+      </Switch>
     </div>
   );
 }
