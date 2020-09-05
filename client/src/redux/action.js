@@ -31,5 +31,7 @@ export const fetchPhones = () => async (dispatch) => {
       dispatch(fetchPhonesError(error));
     });
 
-  dispatch(fetchPhonesSuccess(phones));
+  // dispatch(fetchPhonesSuccess(phones));
+
+  setTimeout(() => dispatch(fetchPhonesSuccess(phones)), 2000);
 };

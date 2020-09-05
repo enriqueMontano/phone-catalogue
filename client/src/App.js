@@ -23,7 +23,7 @@ function App() {
         <Route
           exact
           path='/'
-          component={() => <PhonesList phonesList={phones} />}
+          component={() => <PhonesList phonesList={phones} pending={pending} />}
         />
         <Route exact path='/:name/detail' component={PhoneDetails} />
       </Switch>
