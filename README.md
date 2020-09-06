@@ -23,6 +23,8 @@ $ npm i
 
 ## How to run the application
 
+On the project root directory
+
 ```bash
 $ cd server
 $ npm start
