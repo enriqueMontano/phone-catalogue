@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchPhones } from './redux/action';
 import { PhonesList } from './components/PhonesList/PhonesList.component';
 import { PhoneDetails } from './components/PhoneDetails/PhoneDetails.component';
+import { ThemeProvider } from 'styled-components';
+import theme from './resources/theme';
 import './App.css';
 
 function App() {
@@ -23,29 +25,31 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className='App'>
-      <Switch>
-        <Route
-          exact
-          path='/'
-          component={() => (
-            <PhonesList
-              phonesList={phones}
-              pending={pending}
-              error={error}
-              action={handleSelectPhone}
-            />
-          )}
-        />
-        <Route
-          exact
-          path='/:name/detail'
-          component={() => (
-            <PhoneDetails phone={phone} pending={pending} error={error} />
-          )}
-        />
-      </Switch>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className='App'>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            component={() => (
+              <PhonesList
+                phonesList={phones}
+                pending={pending}
+                error={error}
+                action={handleSelectPhone}
+              />
+            )}
+          />
+          <Route
+            exact
+            path='/:name/detail'
+            component={() => (
+              <PhoneDetails phone={phone} pending={pending} error={error} />
+            )}
+          />
+        </Switch>
+      </div>
+    </ThemeProvider>
   );
 }
 

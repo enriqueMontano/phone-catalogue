@@ -14,7 +14,7 @@ export const TagWrapper = styled.div`
   align-items: center;
   opacity: 0.6;
   color: ${({ theme }) => theme.primary.white};
-  background-color: ${({ color }) => color};
+  background-color: ${({ bgColor = '#F0F3F9' }) => bgColor};
   margin: 3px 0 0 3px;
 
   span {

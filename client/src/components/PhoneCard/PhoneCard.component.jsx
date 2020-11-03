@@ -4,7 +4,6 @@ import { Tag } from '../Tag/Tag.component';
 import { Price } from '../Price/Price.component';
 import { CustomLink } from '../CustomLink';
 import { PhoneCardWrapper } from './PhoneCard.styled';
-import { theme } from '../../resources/theme';
 
 export const PhoneCard = ({
   id,
@@ -17,7 +16,7 @@ export const PhoneCard = ({
   action,
 }) => (
   <Panel width={`${175}px`} height={`${350}px`}>
-    <PhoneCardWrapper theme={theme}>
+    <PhoneCardWrapper>
       <Price price={price} />
       <div className='img-container'>
         <img src={`/images/${imageFileName}`} alt={imageFileName} />
@@ -26,16 +25,12 @@ export const PhoneCard = ({
       <div className='data-container'>
         <p className='name-paragraph'>{name}</p>
         <div className='tags-container'>
-          <Tag feature={manufacturer} color={theme.secondary.red} />
-          <Tag feature={processor} color={theme.secondary.darkGreen} />
-          <Tag feature={ram} color={theme.primary.blue} />
+          <Tag feature={manufacturer} secondary bgColor={'#CA0C00'} />
+          <Tag feature={processor} secondary bgColor={'#025E3E'} />
+          <Tag feature={ram} primary bgColor={'#0F1C51'} />
         </div>
       </div>
-      <CustomLink
-        theme={theme}
-        to={`${name}/detail/`}
-        onClick={() => action(id)}
-      >
+      <CustomLink to={`${name}/detail/`} onClick={() => action(id)}>
         View More
       </CustomLink>
     </PhoneCardWrapper>

@@ -1,14 +1,11 @@
 import React from 'react';
 import { TagWrapper } from './Tag.styled';
-import { theme } from '../../resources/theme';
 
-export const Tag = ({ feature, color }) =>
+export const Tag = ({ feature, bgColor }) =>
   typeof feature !== 'number' ? (
-    <TagWrapper theme={theme} color={color}>
-      {feature}
-    </TagWrapper>
+    <TagWrapper bgColor={bgColor}>{feature}</TagWrapper>
   ) : (
-    <TagWrapper theme={theme} color={color}>
+    <TagWrapper bgColor={bgColor}>
       {feature}
       <span>GB</span>
     </TagWrapper>

@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
   primary: {
     blue: '#0F1C51',
     paleBlue: '#236bf0',
@@ -21,3 +21,5 @@ export const theme = {
     darkGray: '#9297AC',
   },
 };
+
+export default theme;
